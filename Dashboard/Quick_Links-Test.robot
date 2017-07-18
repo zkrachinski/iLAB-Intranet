@@ -42,6 +42,24 @@ Owncloud External Links Test
     select window  url=https://owncloud.ilabsqa.com/owncloud/
     wait until owncloud page loads
 
+Paycor External Links Test
+    [Tags]  Debug   Quick Links  Dashboard  iLAB-Intranet  Paycor External Links Test
+    wait until login page loads
+    login
+    wait until dashboard page loads
+    click paycor quick link
+    select window  url=https://www.paycor.com/
+    wait until paycor page loads
+
+TSheets External Links Test
+    [Tags]  Debug   Quick Links  Dashboard  iLAB-Intranet  TSheets External Links Test
+    wait until login page loads
+    login
+    wait until dashboard page loads
+    click tsheets quick link
+    select window  url=https://ilabllc.tsheets.com/page/login
+    wait until tsheets page loads
+
 *** Keywords ***
 Wait Until Login Page Loads
     wait until page contains element  id=user
@@ -69,6 +87,16 @@ Wait Until Owncloud Page Loads
     page should contain  owncloud.ilabquality.com
     page should contain link  https://owncloud.org
 
+Wait Until Paycor Page Loads
+    wait until page contains element  css=.brand>img
+    page should contain  We’re on a first name basis with our clients
+    page should contain  From pre-hire to people management, HR and payroll is complex. You need a partner.
+
+Wait Until TSheets Page Loads
+    wait until page contains element  css=#username
+    page should contain element  css=#password
+    page should contain element  css=.flat.primary.action
+
 Login
     page should contain element  id=user
     page should contain element  id=pass
@@ -87,3 +115,11 @@ Click HelpDesk Quick Link
 Click Owncloud Quick Link
     page should contain element  css=.wp-image-1218.aligncenter
     click element  css=.wp-image-1218.aligncenter
+
+Click Paycor Quick Link
+    page should contain element  css=.wp-image-1217.aligncenter
+    click element  css=.wp-image-1217.aligncenter
+
+Click TSheets Quick Link
+    page should contain element  css=.wp-image-1216.aligncenter
+    click element  css=.wp-image-1216.aligncenter
