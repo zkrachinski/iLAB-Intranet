@@ -32,6 +32,7 @@ Dashboard Bottom Page Navigation Link
     wait until dashboard page loads
 
 Dashboard Top Page Navigation Link
+    maximize browser window
     wait until login page loads
     login
     wait until dashboard page loads
@@ -39,6 +40,7 @@ Dashboard Top Page Navigation Link
     wait until dashboard page loads
 
 Members Top Page Navigation Link
+    maximize browser window
     wait until login page loads
     login
     wait until dashboard page loads
@@ -46,6 +48,7 @@ Members Top Page Navigation Link
     wait until members page loads
 
 News Top Page Navigation Link
+    maximize browser window
     wait until login page loads
     login
     wait until dashboard page loads
