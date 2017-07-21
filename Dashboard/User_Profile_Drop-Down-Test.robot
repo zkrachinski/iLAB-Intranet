@@ -45,6 +45,38 @@ User Profile Favorites Tab
     wait for user page to load
     assert favorites selection
 
+User Profile View Tab
+    maximize browser window
+    wait until login page loads
+    login
+    click user tab
+    assert user tab is open
+    click profile tab
+    click view page link
+    wait for user page to load
+    assert view selection
+
+User Profile Edit Tab
+    maximize browser window
+    wait until login page loads
+    login
+    click user tab
+    assert user tab is open
+    click profile tab
+    click edit page link
+    wait for user page to load
+    assert edit selection
+
+User Profile Change Profile Photo Tab
+    maximize browser window
+    wait until login page loads
+    login
+    click user tab
+    assert user tab is open
+    click profile tab
+    click change profile photo link
+    assert change profile selection
+
 *** Keywords ***
 Wait Until Login Page Loads
     wait until page contains element  id=user
@@ -69,6 +101,20 @@ Assert Mentions Selection
 Assert Favorites Selection
     page should contain  Sorry, there was no activity found. Please try a different filter.
 
+Assert View Selection
+    page should contain  Name
+    page should contain  Test User
+    page should contain  View
+
+Assert Edit Selection
+    page should contain  Editing 'Base' Profile Group
+    page should contain  Who can see this field?
+    page should contain   Office number
+
+Assert Change Profile Selection
+    page should contain  Change Profile Photo
+    page should contain  Click below to select a JPG, GIF or PNG format photo from your computer and then click 'Upload Image' to proceed.
+
 Click User Tab
     wait until element is visible  xpath=.//*[@id='user-thumb']
     click element  xpath=.//*[@id='user-thumb']
@@ -76,6 +122,10 @@ Click User Tab
 Click Activity Tab
     wait until element is visible  xpath=.//*[@id='activity-personal-li']/a
     click element  xpath=.//*[@id='activity-personal-li']/a
+
+Click Profile Tab
+    wait until element is visible  xpath=.//*[@id='xprofile-personal-li']/a
+    click element  xpath=.//*[@id='xprofile-personal-li']/a
 
 Click Activity Page Link
     wait until element is visible  xpath=.//*[@id='just-me-personal-li']/a
@@ -88,6 +138,18 @@ Click Mentions Page Link
 Click Favorites Page Link
     wait until element is visible  xpath=.//*[@id='activity-favs-personal-li']/a
     click element  xpath=.//*[@id='activity-favs-personal-li']/a
+
+Click View Page Link
+    wait until element is visible  xpath=.//*[@id='public-personal-li']/a
+    click element  xpath=.//*[@id='public-personal-li']/a
+
+Click Edit Page Link
+    wait until element is visible  xpath=.//*[@id='edit-personal-li']/a
+    click element  xpath=.//*[@id='edit-personal-li']/a
+
+Click Change Profile Photo Link
+    wait until element is visible  xpath=.//*[@id='change-avatar-personal-li']/a
+    click element  xpath=.//*[@id='change-avatar-personal-li']/a
 
 Assert User Tab is Open
     wait until element is visible  xpath=.//*[@id='activity-personal-li']/a
