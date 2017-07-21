@@ -10,12 +10,47 @@ ${Username}  Test.User
 ${Password}  iLAB7923!
 
 *** Test Cases ***
-Members Navigation Link
+Members Bottom Page Navigation Link
     wait until login page loads
     login
     wait until dashboard page loads
-    click members link
+    click bottom page members link
     wait until members page loads
+
+News Bottom Page Navigation Link
+    wait until login page loads
+    login
+    wait until dashboard page loads
+    click bottom page news link
+    wait until news page loads
+
+Dashboard Bottom Page Navigation Link
+    wait until login page loads
+    login
+    wait until dashboard page loads
+    click bottom page dashboard link
+    wait until dashboard page loads
+
+Dashboard Top Page Navigation Link
+    wait until login page loads
+    login
+    wait until dashboard page loads
+    click top page dashboard link
+    wait until dashboard page loads
+
+Members Top Page Navigation Link
+    wait until login page loads
+    login
+    wait until dashboard page loads
+    click top page members link
+    wait until members page loads
+
+News Top Page Navigation Link
+    wait until login page loads
+    login
+    wait until dashboard page loads
+    click top page news members link
+    wait until news page loads
 
 *** Keywords ***
 Wait Until Login Page Loads
@@ -34,10 +69,40 @@ Wait Until Members Page Loads
     page should contain element  css=#members_search
     page should contain element  css=#members-map-trigger
 
-Click Members Link
-    wait until page contains element  css=.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-503>a
-    mouse down  css=.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-503>a
-    click link  https://ilink.ilabquality.com/members/
+Wait Until News Page Loads
+    wait until page contains  News
+    page should contain link  https://ilink.ilabquality.com/2017/07/19/please-meet-paxen-thantsha/
+    page should contain link  https://ilink.ilabquality.com/2017/07/13/please-meet-thandiwe-mmadi/
+
+Click Bottom Page Members Link
+    wait until page contains element  xpath=.//*[@id='menu-menu-header']/li[2]/a
+    mouse down  xpath=.//*[@id='menu-menu-header']/li[2]/a
+    click element  xpath=.//*[@id='menu-menu-header']/li[2]/a
+
+Click Bottom Page News Link
+    wait until page contains element  xpath=.//*[@id='menu-menu-header']/li[3]/a
+    mouse down  xpath=.//*[@id='menu-menu-header']/li[3]/a
+    click element  xpath=.//*[@id='menu-menu-header']/li[3]/a
+
+Click Bottom Page Dashboard Link
+    wait until page contains element   xpath=.//*[@id='menu-menu-header']/li[1]/a
+    mouse down  xpath=.//*[@id='menu-menu-header']/li[1]/a
+    click element  xpath=.//*[@id='menu-menu-header']/li[1]/a
+
+Click Top Page Dashboard Link
+    wait until page contains element  xpath=.//*[@id='menu-item-1670']/a
+    mouse down  xpath=.//*[@id='menu-item-1670']/a
+    click element  xpath=.//*[@id='menu-item-1670']/a
+
+Click Top Page Members Link
+    wait until page contains element  xpath=.//*[@id='menu-item-503']/a
+    mouse down  xpath=.//*[@id='menu-item-503']/a
+    click element  xpath=.//*[@id='menu-item-503']/a
+
+Click Top Page News Members Link
+    wait until page contains element  xpath=.//*[@id='menu-item-1201']/a
+    mouse down  xpath=.//*[@id='menu-item-1201']/a
+    click element  xpath=.//*[@id='menu-item-1201']/a
 
 Login
     page should contain element  id=user
