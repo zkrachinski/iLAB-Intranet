@@ -11,6 +11,7 @@ ${Password}  iLAB7923!
 
 *** Test Cases ***
 User Profile Activity Tab
+    [Tags]  Debug  Activity Tab  Dashboard  User Profile Drop-Down
     maximize browser window
     wait until login page loads
     login
@@ -23,6 +24,7 @@ User Profile Activity Tab
     assert activity selection
 
 User Profile Mentions Tab
+    [Tags]  Debug  Mentions Tab  Dashboard  User Profile Drop-Down
     maximize browser window
     wait until login page loads
     login
@@ -35,6 +37,7 @@ User Profile Mentions Tab
     assert mentions selection
 
 User Profile Favorites Tab
+    [Tags]  Debug  Favorites Tab  Dashboard  User Profile Drop-Down
     maximize browser window
     wait until login page loads
     login
@@ -46,6 +49,7 @@ User Profile Favorites Tab
     assert favorites selection
 
 User Profile View Tab
+    [Tags]  Debug  View Tab  Dashboard  User Profile Drop-Down
     maximize browser window
     wait until login page loads
     login
@@ -57,6 +61,7 @@ User Profile View Tab
     assert view selection
 
 User Profile Edit Tab
+    [Tags]  Debug  Edit Tab  Dashboard  User Profile Drop-Down
     maximize browser window
     wait until login page loads
     login
@@ -68,6 +73,7 @@ User Profile Edit Tab
     assert edit selection
 
 User Profile Change Profile Photo Tab
+    [Tags]  Debug  Change Profile Photo Tab  Dashboard  User Profile Drop-Down
     maximize browser window
     wait until login page loads
     login
@@ -76,6 +82,46 @@ User Profile Change Profile Photo Tab
     click profile tab
     click change profile photo link
     assert change profile selection
+
+User Profile Unread Tab
+    [Tags]  Debug  Unread Tab  Dashboard  User Profile Drop-Down
+    maximize browser window
+    wait until login page loads
+    login
+    click user tab
+    assert user tab is open
+    click notifications tab
+    click unread link
+    assert unread selection
+
+User Profile Read Tab
+    [Tags]  Debug  Read Tab  Dashboard  User Profile Drop-Down
+    maximize browser window
+    wait until login page loads
+    login
+    click user tab
+    assert user tab is open
+    click notifications tab
+    click read link
+    assert read selection
+
+Notifications Bell
+    [Tags]  Debug  Notifications Bell  Dashboard  Icons
+    maximize browser window
+    wait until login page loads
+    login
+    wait for dashboard page to load
+    click notification bell
+    assert notification bell was clicked
+
+Search Icon
+    [Tags]  Debug  Search Icon  Dashboard  Icons
+    maximize browser window
+    wait until login page loads
+    login
+    wait for dashboard page to load
+    click search icon
+    assert search icon was clicked
 
 *** Keywords ***
 Wait Until Login Page Loads
@@ -115,6 +161,18 @@ Assert Change Profile Selection
     page should contain  Change Profile Photo
     page should contain  Click below to select a JPG, GIF or PNG format photo from your computer and then click 'Upload Image' to proceed.
 
+Assert Unread Selection
+    page should contain  You have no unread notifications.
+
+Assert Read Selection
+    page should contain  You have no notifications.
+
+Assert Notification Bell Was Clicked
+    element should be visible  xpath=.//*[@id='woffice-notifications-content']/p
+
+Assert Search Icon Was Clicked
+    element should be visible  xpath=.//*[@id='s']
+
 Click User Tab
     wait until element is visible  xpath=.//*[@id='user-thumb']
     click element  xpath=.//*[@id='user-thumb']
@@ -126,6 +184,10 @@ Click Activity Tab
 Click Profile Tab
     wait until element is visible  xpath=.//*[@id='xprofile-personal-li']/a
     click element  xpath=.//*[@id='xprofile-personal-li']/a
+
+Click Notifications Tab
+    wait until element is visible  xpath=.//*[@id='notifications-personal-li']/a
+    click element  xpath=.//*[@id='notifications-personal-li']/a
 
 Click Activity Page Link
     wait until element is visible  xpath=.//*[@id='just-me-personal-li']/a
@@ -150,6 +212,22 @@ Click Edit Page Link
 Click Change Profile Photo Link
     wait until element is visible  xpath=.//*[@id='change-avatar-personal-li']/a
     click element  xpath=.//*[@id='change-avatar-personal-li']/a
+
+Click Unread Link
+    wait until element is visible  xpath=.//*[@id='notifications-my-notifications-personal-li']/a
+    click element  xpath=.//*[@id='notifications-my-notifications-personal-li']/a
+
+Click Read Link
+    wait until element is visible  xpath=.//*[@id='read-personal-li']/a
+    click element  xpath=.//*[@id='read-personal-li']/a
+
+Click Notification Bell
+    wait until element is visible  xpath=.//*[@id='nav-notification-trigger']
+    click element  xpath=.//*[@id='nav-notification-trigger']
+
+Click Search Icon
+    wait until element is visible  xpath=.//*[@id='search-trigger']
+    click element  xpath=.//*[@id='search-trigger']
 
 Assert User Tab is Open
     wait until element is visible  xpath=.//*[@id='activity-personal-li']/a
