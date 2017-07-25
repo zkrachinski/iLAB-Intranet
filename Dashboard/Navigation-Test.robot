@@ -11,6 +11,7 @@ ${Password}  iLAB7923!
 
 *** Test Cases ***
 Members Bottom Page Navigation Link
+    [Tags]  Debug  Members Link  Dashboard  Bottom Page Navigation
     wait until login page loads
     login
     wait until dashboard page loads
@@ -18,6 +19,7 @@ Members Bottom Page Navigation Link
     wait until members page loads
 
 News Bottom Page Navigation Link
+    [Tags]  Debug  News Link  Dashboard  Bottom Page Navigation
     wait until login page loads
     login
     wait until dashboard page loads
@@ -25,6 +27,7 @@ News Bottom Page Navigation Link
     wait until news page loads
 
 Dashboard Bottom Page Navigation Link
+    [Tags]  Debug  Dasboard Link  Dashboard  Bottom Page Navigation
     wait until login page loads
     login
     wait until dashboard page loads
@@ -32,6 +35,7 @@ Dashboard Bottom Page Navigation Link
     wait until dashboard page loads
 
 Dashboard Top Page Navigation Link
+    [Tags]  Debug  Dashboard Link  Dashboard  Top Page Navigation
     maximize browser window
     wait until login page loads
     login
@@ -40,6 +44,7 @@ Dashboard Top Page Navigation Link
     wait until dashboard page loads
 
 Members Top Page Navigation Link
+    [Tags]  Debug  Members Link  Dashboard  Top Page Navigation
     maximize browser window
     wait until login page loads
     login
@@ -48,6 +53,7 @@ Members Top Page Navigation Link
     wait until members page loads
 
 News Top Page Navigation Link
+    [Tags]  Debug  News Link  Dashboard  Top Page Navigation
     maximize browser window
     wait until login page loads
     login
